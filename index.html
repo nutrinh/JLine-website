@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JLine</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="css/style.css">
+        <!---Favicon-->
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon//favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon//favicon-16x16.png">
+        <link rel="manifest" href="favicon/site.webmanifest">
+        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <div id="home-menu"> 
+                    <div class="logo">
+                        <img src="images/logo2.png" alt="header logo">
+                    </div>
+                    <div class="welcome">
+                        <p>Welcome to JLine</p>
+                    </div>
+                    <nav class="menu-container">
+                        <div class="close-btn">&times;</div>
+                        <ul class="menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="mybooking.html">My booking</a></li>
+                            <li><a href="membership.html">Membership</a></li>
+                            <li><a href="travelinfo.html">Travel Information</a></li>
+                            <li><a href="destination.html">Destination</a></li>
+                            <li><a href="aboutus.html">About us</a></li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <i class="icon-menu hamburger-btn"></i>
+                    </div>
+                </div>
+                <div id="home-banner">
+                    <div class="promotion-text">
+                        <div class="text banner-active" data-slide="1">
+                            <p>BEST NEWS!</p>
+                            <p>A sea tour every Saturday</p>
+                        </div>
+                        <div class="text" data-slide="2">
+                            <p>HOT NEWS!</p>
+                            <p>Discount 20% for high school students</p>
+                        </div>
+                        <div class="text" data-slide="3">
+                            <p>GREAT NEWS!</p>
+                            <p>Discount 20% for the summer 2022</p>
+                        </div>
+                    </div>
+                    <div id="slideshow">
+                        <div class= "banner banner-active" data-slide="1">
+                            <img src="images/plane1.png" alt="plane1" />
+                        </div>
+                        <div class= "banner" data-slide="2">
+                            <img src="images/plane2.jpeg" alt="plane2"/>
+                        </div>
+                        <div class= "banner" data-slide="3">
+                            <img src="images/plane3.png" alt="plane3"/>
+                        </div>
+                    </div>
+                    <div class="slide-navigation">
+                        <a href="#" class="slide-nav active" data-slide="1">plane1</a>
+                        <a href="#" class="slide-nav" data-slide="2">plane2</a>
+                        <a href="#" class="slide-nav" data-slide="3">plane3</a>
+                    </div>
+                </div>
+                <div class="small">
+                    <h4>BEST NEWS!</h4>
+                    <ul>
+                        <li>A sea tour every Saturday</li>
+                        <li>Discount 20% for high school students</li>
+                        <li>Discount 20% for the summer 2022</li>
+                    </ul>
+                </div>
+            </header>
+            <main>
+                <h1>Book Now!</h1>
+                <section class="booking-method">
+                    <h2>Your ideal flight</h2>
+                    <div>
+                        <p>When you book flights with JLine, you have cancellation protection in case of:</p>
+                        <ul>
+                            <li>Illness including COVID-19</li>
+                            <li>Mechanical breakdown</li>
+                            <li>Other emergency</li>
+                        </ul>
+                        <p>Please read the following <a href=""><strong>terms and conditions.</strong></a></p>
+                    </div>
+                    <div>
+                        <form   action="#" 
+                                method="post">
+                                <div class="input-label-group">
+                                    <label	for="from-place"> From:</label>
+                                    <input 	type="text"	
+                                            name="from-place" 
+                                            id="from-place"
+                                            placeholder="&#9992; Destination"/>
+                                </div>
+                                <div class="input-label-group">
+                                    <label	for="to-place">To:</label>	
+                                    <input 	type="text"	
+                                            name="to-place" 
+                                            id="to-place"
+                                            placeholder="&#9992; Destination"/>
+                                </div>
+                                <div class="input-label-group">
+                                    <label	for="from-date">When are you travelling?</label>
+                                    <div class="date-wrapper">
+                                        <input 	type="date"	
+                                                name="from-date" id="from-date"/>
+                                    </div>
+                                </div>
+                                <div class="input-label-group">
+                                    <label	for="to-date" class="sr-only">Return Date</label>
+                                    <div class="date-wrapper">
+                                        <input 	type="date"	
+                                                name="to-date" id="to-date"/>
+                                    </div>	
+                                </div>
+                                <div> 
+                                    <label for="passengers">Who's travelling?</label>
+                                    <div class="select-wrapper">
+                                        <select name="passengers" id="passengers">
+                                            <option value="" disabled="" selected="selected">Select option</option>
+                                            <option value="adult">Adult</option>
+                                            <option value="senior">Senior</option>            
+                                            <option value="children">Children</option>            
+                                        </select>
+                                    </div>
+                                </div> 
+                                <div>
+                                    <label 	for="low-fare">Find the lowest fare</label>
+                                    <input 	type="checkbox" 
+                                            name="low-fare"
+                                            id="low-fare"  />
+                                </div>       
+                                <div class="submit-button">
+                                    <input type="submit" value="Search &#8594;">
+                                </div>
+                        </form>
+                    </div>
+                </section>
+                <section>
+                    <h2>Flight specials</h2>
+                    <div class="type-1 one-column">
+                        <article>
+                            <div class="special">
+                                <img alt="illustration" src="images/banff.jpeg">
+                            </div>
+                            <div>
+                                <div> 
+                                    <h3>Whistler</h3>
+                                    <p>From <strong>$89</strong></p>
+                                </div>
+                                <button>Book Now</button>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="special">
+                                <img alt="illustration" src="images/banff.jpeg">
+                            </div>
+                            <div>
+                                <div>
+                                    <h3>Abborsford</h3>
+                                    <p>From <strong>$89</strong></p>
+                                </div>
+                                <button>Book Now</button>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="special">
+                                <img alt="illustration" src="images/banff.jpeg">
+                            </div>
+                            <div>
+                                <div>
+                                    <h3>Victoria</h3>
+                                    <p>From <strong>$89</strong></p>
+                                </div>
+                                <button>Book Now</button>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="special">
+                                <img alt="illustration" src="images/banff.jpeg">
+                            </div>
+                            <div>
+                                <div>
+                                    <h3>Nanaimo</h3>
+                                    <p>From <strong>$89</strong></p>
+                                </div>
+                                <button>Book Now</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section>
+                    <h2>Why JLine?</h2>
+                    <div class="type-2 one-column">
+                        <article>
+                            <div class="special reasons">
+                                <img alt="illustration" src="images/star.png">
+                            </div>
+                            <div>
+                                <p>We are proud to have achieved 7 stars in aviation safety. Our technical staff work hard 
+                                    to give you the smoothest flying experience. All of our pilots have more than 
+                                    7 years in the airline industry. 
+                                </p>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="special reasons">
+                                <img alt="illustration" src="images/drink.png">
+                            </div>
+                            <div>
+                                <p>A variety of free drinks and snacks awaits you onboard. Our crew offers personalised and caring 
+                                    service on every flight. You can rest assured that our performance is consistently on-time. 
+                                    Your time is valuable to us.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="special reasons">
+                                <img alt="illustration" src="images/computer.png">
+                            </div>
+                            <div>
+                                <p>Secure and convenient 24/7 booking and confirmation. We are available 24/7 to answer your 
+                                    question or request. From the moment of booking to the time of your arrive, we aim to make
+                                    your travel experience a great one. </p>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="special reasons">
+                                <img alt="illustration" src="images/route.png">
+                            </div>
+                            <div>
+                                <p>You can choose from a range of destinations throughout BC. We have the largest network compared to
+                                    other regional airlines. We always work to connect and open more routes to cater to your needs.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+        
+            <footer>
+                <div class="logo"><img src="images/logo2.png" alt="footer logo"></div>
+                <div class="quick-links">
+                    <div>
+                        <h3>The company</h3>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Fly with JLine</h3>
+                        <ul>
+                            <li><a href="#">Schedules</a></li>
+                            <li><a href="#">Destinations</a></li>
+                            <li><a href="#">Membership</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Media</h3>
+                        <ul>
+                            <li><a href="#"><i class="icon-facebook-squared">Facebook</i></a></li>
+                            <li><a href="#"><i class="icon-twitter">Twitter</i></a></li>
+                            <li><a href="#"><i class="icon-youtube-play">YouTube</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <p>Made by Nu <span>&#9829;</span>Inspired by Choc</p>
+                </div>
+            </footer>
+        </div>
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+        <script src="scripts/slideshow.js"></script>
+    </body>
+</html>

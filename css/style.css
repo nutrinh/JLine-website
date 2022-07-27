@@ -1,0 +1,888 @@
+/*
+author:		Dao Nguyet Nu Trinh
+date:		20/06/2022
+student#:	A01268847
+school: BCIT
+course: COMP1850
+*/
+@charset "utf-8";
+
+/* ------ Fonts ------ */
+@import url("fonts.css");
+
+/* ------ Browser Resets ------ */
+@import url("normalize.css");
+
+/* ---- Ensure all page elements use box-sizing:border-box; ----- */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* ------ Variables ------ */
+:root{     
+    --main-color: white;
+    --second-color:rgba(80, 71, 34, 0.366);
+    --third-color: rgba(233, 135, 17, 0.836); 
+    --decoration-color: black;
+    --section-color: wheat;
+    --contrast-color: rgb(173, 33, 33); 
+
+    --first-font: "josefin_sansregular";
+    --second-font: "caviar_dreamsregular";
+    --third-font: "seasideresortnfregular";
+}
+/* ______General body______ */
+body {
+    font-family: var(--first-font), 'Verdana', sans-serif;
+    color: var(--decoration-color);
+    background-image: linear-gradient(to bottom, var(--section-color), var(--third-color));
+    font-size: 1.1rem;
+}
+
+h1, h2, h3, h4, h5, h6, span {
+    font-family: var(--second-font), 'Verdana', sans-serif;
+    margin: 10px;
+    color:var(--third-color)
+}
+
+h3 {
+    color: var(--decoration-color)
+}
+
+
+p {
+    padding: 5px 0px 5px 10px;
+}
+
+/*______Images______ */
+img{
+    max-width: 100%;
+    height:auto;
+}
+.logo img {
+    max-width: 80px;
+    margin: 5px;
+}
+
+.flight-options ul img {
+    max-width: 60px;
+    margin-right: 20px;
+}
+.friends > img:first-of-type {
+    max-height: 200px;
+}
+
+/* ______Container Style______ */
+#wrapper{
+    background-color: antiquewhite;
+	/* restrict width */
+	width: 100%;	
+	max-width: 930px;
+	/* center the wrapper */
+	margin: 0 auto;
+	padding: 10px;
+}
+/* ______Fixed Home Menu Navigation______ */
+
+header {
+    margin: 0px;
+}
+
+#home-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Stay on top */
+    display: flex; 
+    align-items: center;
+}
+#home-banner {
+    margin-top: 60px;
+}
+
+/* ______Lists and Links______ */
+footer ul, footer h3 {
+    padding: 0px;
+}
+
+li {
+    list-style: url(../images/list-marker.png);
+    padding: 10px; 
+}
+
+nav li {
+    display: flex;
+    justify-content: center; 
+}
+
+.flight-options li {
+    display: flex;
+    justify-content: flex-start; 
+    border-top: solid 1px var(--main-color);
+}
+
+a {
+    color:var(--main-color);
+    text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+    color: var(--contrast-color);
+}
+
+nav li:hover, nav li:active, nav li:focus {
+    background-image: linear-gradient(to bottom, var(--section-color), var(--third-color));
+}
+nav a:hover, nav a:active, nav a:focus {
+    color: var(--decoration-color);
+}
+
+/* ______Home banner______ */
+#home-banner {
+    max-width: 100%;
+    position: relative;
+}
+
+.small {
+    display: none;
+}
+
+.slide-navigation {
+    position: absolute;
+    left: 20px;
+    bottom: 10%;
+    display: flex;
+}
+
+.promotion-text{
+    position: absolute;
+    right: 20px;
+    top: 10%;
+    z-index: 2;
+}
+
+.slide-navigation a {
+	display: block;
+    max-width: 20px;
+    max-height: 5px;
+    margin: 0 10px;
+	box-shadow: none;
+	border: none;
+	background: rgba(243, 236, 236, 0.5);
+    /* Hide the text - The Kellum method */
+    text-indent: 100%;  /* The indentation in % of the width of the parent element */
+    white-space: nowrap; /* Text'll never wrap to the next line but continues on the same line */
+    overflow: hidden;
+}
+
+.slide-navigation a.active { 
+	background: var(--decoration-color);
+}
+
+.text, .small {
+    background-image: linear-gradient(to bottom, rgba(243, 236, 236, 0.2), rgba(231, 145, 53, 0.721));
+    padding: 10px 10px 40px 10px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    animation: clips 5s ease;
+    transition: 0.8s;
+}
+@keyframes clips {  /*----From: https://css-tricks.com/working-with-shapes-in-web-design/-----*/
+    20%, 50%, 70%, 90% {
+        clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+    }
+    10%, 40%, 60%, 80% {
+        clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    }
+  }
+
+.text > p:first-child {
+    font-family: var(--second-font);
+    margin-top: 10px;
+    color: var(--decoration-color);
+    text-shadow: 2px 2px var(--section-color);
+}
+.text > p:last-child {
+    margin: 0 10px 10px 10px;
+    color: rgb(245, 242, 242);
+    text-shadow: 2px 2px rgba(216, 216, 30, 0.6);
+}
+
+.text, .banner {
+    display: none;
+}
+
+.banner {
+    position: relative;
+}
+.banner:before { /* Put gradient over an image */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-image: linear-gradient(to bottom, var(--section-color), var(--third-color));
+    opacity: 0.6; 
+}
+
+.banner-active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* ______Footer______ */
+footer {
+    background-color: var(--third-color);
+    border-radius: 10px 10px  0 0;
+
+}
+
+footer, footer a,
+.icon-facebook-squared, 
+.icon-youtube-play,
+.icon-twitter {
+    color:aliceblue;
+}
+
+footer li {
+    list-style: none;
+}
+
+.quick-links {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer > div:first-child , footer > div:last-child {
+    display: flex;
+    justify-content: center;
+}
+
+footer > div:last-child {
+    background-color: var(--decoration-color);
+    color:var(--main-color);
+}
+
+
+/*______Section______ */
+section {
+    background-color: var(--section-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+section div {
+    margin: 10px;
+}
+
+/*_______Home page _________*/
+.type-1 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    column-gap: 10px;
+    margin: 0px;
+}
+
+.type-1 h3 {
+    font-family: var(--third-font);
+    font-size: 2vh; /* responsive text */
+}
+
+.one-column article, 
+.one-column article div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+} 
+
+article {
+    background-image: linear-gradient(to bottom, var(--section-color), var(--third-color));
+    margin-top: 5px;
+}
+
+.special {
+    clip-path: circle(50% at 50% 50%); 
+    margin: 25px 20px 0px 20px;
+    position: relative;
+}
+.special:before { /* Put gradient over an image */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-image: linear-gradient(to bottom, var(--section-color), var(--third-color));
+    opacity: 0.6;
+}
+.special ~ div p {
+    margin: 0px 0px 9px 0px;
+    padding: 0px;
+}
+.special ~ div strong {
+    background-color: var(--section-color);
+    font-family: var(--second-font);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.reasons:before {
+    background-image:none;
+}
+.reasons img {
+    max-width: 120px;
+    max-height: 100px;
+    padding: 10px;
+}
+
+/* For Screen Readers only, not for display
+Styles taken from https://www.accessibility-developer-guide.com/examples/sensible-aria-usage/hidden/
+Hide an element from display, but NOT hide it from screen readers */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap; /* added line */
+	border: 0;
+}
+
+.input-label-group input[type=text], input[type=date],
+#passengers, #languages { 
+    width: 100%;     
+    padding: 10px;
+    border: 2px solid var(--third-color);
+    border-radius: 10px;
+    color: gray;
+}
+
+.input-label-group input[type=text]:focus {
+    background-color: rgba(245, 194, 112, 0.6);
+}
+
+.input-wrapper, .date-wrapper, .select-wrapper {
+    /* allow absolute positioning of its pseudo-element child */
+    position: relative;
+    margin: 0px;
+    color: var(--decoration-color);
+}
+
+.input-wrapper:after {
+    /*  The following rule allows click and tap events to pass through: 
+    this pseudo element wont interfere with interacting with its child element */
+    pointer-events: none;
+   
+    /* create a required asterisk */
+    content: "*";
+    position: absolute;
+    left: 6px;
+    top: 20%;
+    color: var(--third-color);  
+}
+
+.date-wrapper:after {
+    font-family: 'fontello'; /* add icon-calendar */
+    content: '\e800';
+    background-color: var(--main-color);
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+    top: 20%;
+    color: var(--third-color);  
+}
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+}
+.submit-button input[type=submit],
+button
+{
+    background-color: var(--main-color);
+    color:var(--decoration-color);
+    border:solid 3px var(--second-color);
+    box-shadow: 2px 2px var(--second-color);
+    border-radius: 10px;
+    font-weight:bold;
+    padding:10px;
+    margin:3px;
+}
+
+.submit-button input[type=submit]:hover, .submit-button input[type=reset]:hover,
+.submit-button input[type=submit]:focus, .submit-button input[type=reset]:focus,
+button:hover, button:focus {
+    background-color: var(--third-color);
+    color: var(--section-color);
+    border:solid 3px var(--second-color);
+    box-shadow: 2px 2px var(--main-color);
+    cursor:pointer;
+}
+
+form, .announcement {
+    border: solid 3px;
+    border-image: linear-gradient(to bottom, var(--decoration-color), var(--third-color)) 1;
+}
+
+/* ______My booking page______ */
+
+.announcement p {
+    padding: 0 10px;
+}
+.announcement a {
+    background-color: var(--decoration-color);
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+}
+.announcement a:hover, .announcement a:focus, .announcement a:active {
+    color: var(--decoration-color);
+    background-color: var(--main-color);
+}
+.vacation-girl {
+    background-image: linear-gradient(to right, var(--section-color), var(--third-color)),
+    url('../images/vacation-girl.jpeg');
+    background-size: cover;
+    border-radius:10px;
+}
+
+/* Membership page */
+.overlap article,
+.overlap article > div:first-child,
+.more-info > div:first-child,
+.type-3, .type-3 article, 
+.type-3 div, .type-3 img, 
+.more-points p, 
+.overlap p {
+    margin: 0px;
+    padding:0px;
+}
+
+.overlap article > div:first-child {
+    display: grid;
+}
+.more-info > div:first-child {
+    grid-area: 1 / 1 / 4 / 2;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.more-info > div:last-child {
+    grid-area: 3 / 1 / 4 / 2;
+    z-index: 2;
+    background-color: rgba(83, 78, 75, 0.6);
+    margin: 0px;
+    padding: 10px;
+    border-radius: 10% 10% 0 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.more-info > div:last-child strong {
+    color: var(--main-color);
+}
+
+.more-info > div:last-child:hover {
+    opacity: 1;
+}
+
+.type-3 article, .type-3 div {
+    display: flex;
+}
+
+.more-points p {
+    padding: 2px 10px;
+}
+
+.type-3 div {
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.type-3 article > div:first-child,
+.other-companies > div:first-child {
+    flex: 1;
+}
+.type-3 article > div:last-child,
+.other-companies > div:last-child {
+    flex: 2;
+}
+
+.more-points, .more-points > div:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.other-companies > div:first-child {
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.other-companies > div:last-child {
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+.other-companies button {
+    padding: 3px;
+}
+
+
+/* Destination - Lorem Ipsum page */
+
+.destination-page a:hover, .destination-page a:focus, 
+.destination-page a:active {
+    color: var(--contrast-color);
+}
+.destination-page h3, .destination-page a {
+    color: var(--third-color);
+}
+
+pre {
+    margin: 0px 5px 20px 5px;
+    background-image: linear-gradient(to bottom, var(--section-color), var(--third-color));
+    font-weight: bold;
+    border: solid 2px var(--third-color);
+    border-radius: 5px;
+    white-space: pre-wrap; /*allow word wrap */
+    word-wrap: break-word; /*allow word break*/ 
+    margin: 0 10px;
+}
+
+code {
+    display: block;
+    margin: 5px;
+}
+
+.floating-image {
+    float: right;
+    margin: 0px 5px;
+}
+
+blockquote {
+    margin-top: 0px;
+    background-image: linear-gradient(to bottom, var(--section-color), var(--third-color));
+    border-radius: 5px; 
+    border-left: 7px solid var(--second-color);
+    color: var(--third-color);
+    font-weight: bold;
+}
+
+.quote {
+    padding: 10px 4px;
+}
+
+.quote p {
+    margin: 9px;
+    padding: 0px;
+}
+
+cite {
+    font-weight: lighter;
+    color:var(--main-color);
+}
+
+table {
+    margin: 0px 0px 15px 15px;
+    border:var(--third-color) dashed 2px;
+}
+
+th {
+    background-color: var(--main-color) ;
+    color: var(--third-color);
+    border: var(--third-color) solid 1px;
+    border-bottom: var(--second-color) solid 1px;
+}
+
+td {
+    border: var(--main-color) solid 2px;
+    padding: 0px 4px;
+}
+
+tr:nth-of-type(even) {
+    background-color: var(--third-color);
+}
+
+
+/* ________About us page_______ */
+.type-4 article > div:last-child p {
+    font-size: 1.3rem;
+}
+
+
+@media screen and (min-width:840px){
+    /* Increase promotion texts */
+    .text {
+        font-size: 30px;
+        transition: 0.8s;
+    }
+    /* Hide the hamburger menu, close button, welcome line in wider viewports */
+	.hamburger-btn, .close-btn, .welcome {
+		display: none;
+	}
+    /*Display the menu items in one row */
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(6, auto);
+        column-gap: 5px;
+    }
+    #home-menu {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        background-color: var(--decoration-color);
+    }
+
+    /* _______Home page_______ */
+    .booking-method {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-content: center;
+    }
+    .booking-method h2 {
+        grid-column: 1 / span 2;
+    }
+
+    .type-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    
+
+    /* _______My booking page_______ */
+    .flight-options, .checking-panel {
+        display: flex;
+        justify-content: space-between;
+    }
+    .flight-options ul, .checking-panel > div:last-child {
+        flex:2;
+    }
+    .flight-options div, .checking-panel > div:first-child  {
+        flex: 1;
+    }
+
+    /* _______Membership page_______ */
+    .type-3 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    .overlap p, .overlap strong {
+        font-size: 0.9rem;
+    }
+
+    /* _______Travel Information page_______ */
+    .newsletter {
+        display: flex;
+    }
+    .newsletter > div:first-child {
+        flex:3;
+    }
+    .newsletter > div:last-child {
+        flex:1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .newsletter select {
+        padding: 10px;
+    }
+    
+
+    /* ________About us page_______ */
+    .friends {
+        display: flex;
+        align-items: center;
+        margin: 0px 0px 0px 10px;
+    }
+    .friends > div:first-child {
+        flex: 1;
+    }
+    .friends > div:last-child {
+        flex: 2;
+    }
+
+    .type-4 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .welcome p {
+        color: var(--main-color);
+    }
+    .icon-menu {
+        cursor: pointer;
+        color: var(--main-color);
+    }
+    .menu-container {
+        height: 100%;
+        width: 0px; /* initially hide the side menu */
+        position: fixed; 
+        z-index: 999; 
+        top: 0; 
+        right: 0;
+        background-color: orange;
+        overflow-x: hidden; /* disable horizontal scroll */
+        transition: 0.7s;
+        margin: 0;
+        padding: 0;
+    
+    }
+    .close-btn {
+        position: absolute;
+        top: 0;
+        left: 15px;
+        font-size: 36px;
+        margin-right: 50px;
+        cursor: pointer;
+    }
+    .menu {
+        margin-top: 50px;
+        display: grid;
+        grid-template-rows: repeat(6, auto);
+        row-gap: 20px;
+    }
+    .visible {
+        width: 300px; /* The menu appears when the close button is clicked */
+    }
+    #home-menu {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        background-color: var(--decoration-color);
+    }
+    #home-menu div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } 
+    #home-menu > div:first-child {
+        justify-content: flex-start;
+    } 
+
+    /* _______Membership page_______ */
+    .overlap {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    .type-3 {
+        display: grid;
+        row-gap: 10px;
+    }
+
+     /* _______My booking page_______ */
+     .flight-options, .checking-panel {
+        display: flex;
+        flex-direction: column;
+    }
+    .vacation-girl {
+        min-height: 400px;
+        background-image: linear-gradient(to bottom, var(--section-color), var(--third-color)),
+        url('../images/vacation-girl2.jpeg');
+        background-size: cover;
+    }
+
+    /* ________About us page_______ */
+    .friends {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0px 0px 10px;
+        align-items: center;
+    }
+
+}
+
+
+@media screen and (max-width: 570px) { 
+
+    /* ______Footer______ */
+
+    .quick-links {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+    }
+    .quick-links > div:last-child {
+        grid-column: 1/ span 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* _______Home page_______ */
+    .type-1 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+    .special {
+        max-width: 200px;
+    }
+
+
+     /* _______My booking page_______ */
+    .vacation-girl {
+        min-height: 400px;
+        background-image: linear-gradient(to bottom, var(--section-color), var(--third-color)),
+        url('../images/vacation-girl.jpeg');
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 490px) { 
+
+    /*______Home banner______*/
+    .promotion-text {
+        display: none;
+    }
+    .small, /* Home banner */
+    .quick-links, .quick-links div, /* ______Footer______ */
+    .type-1, .type-4 /* ________About us page_______ */
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    main {
+        margin-top: 0px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    /*______My booking page_______*/
+
+    .checking-panel, .input-label-group {
+        margin: 10px 0px;
+    }
+
+     /* _______Membership page_______ */
+    .type-3 article {
+        display: grid;
+    }
+    .type-3 article > div:first-child {
+        grid-area: 1/1/1/1;
+    }
+    .type-3 article > div:last-child  {
+        grid-area: 1/1/1/1;
+        background-color: rgba(246, 163, 69, 0.7);
+        padding: 0 10px;
+    }
+    .more-points p{
+        font-size: 3vh;
+        color: var(--main-color);
+    }
+
+}
